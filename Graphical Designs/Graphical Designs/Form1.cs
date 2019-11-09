@@ -12,6 +12,21 @@ namespace Graphical_Designs
 {
     public partial class Form1 : Form
     {
+
+        Pen myPen = new Pen(Color.Black);
+        Graphics g = null;
+
+        static int center_x, center_y;
+
+        static int start_x, start_y;
+        static int end_x, end_y;
+        static int my_angle=0;
+        static int my_length = 0;
+        static int my_increment = 0;
+        static int num_lines = 0;
+
+
+
         public Form1()
         {
             InitializeComponent();
@@ -34,6 +49,28 @@ namespace Graphical_Designs
 
         private void increment_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void drawLines()
+        {
+            new Point(start_x, start_y);
+            new Point(start_x +100, start_y +100);
+
+        }
+
+
+        private void canvas_Paint(object sender, PaintEventArgs e)
+        {
+            my_length = Int32.Parse(length1.Text);
+            my_angle = Int32.Parse(angle1.Text);
+            my_increment = Int32.Parse(increment1.Text);
+
+            start_x = canvas.Width / 2;
+            start_y = canvas.Height / 2;
+            canvas.Refresh();
+
+
 
         }
     }

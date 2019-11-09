@@ -30,16 +30,16 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.canvas = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.angle = new System.Windows.Forms.Label();
             this.length = new System.Windows.Forms.Label();
             this.increment = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Go = new System.Windows.Forms.Button();
+            this.line1 = new System.Windows.Forms.TextBox();
+            this.angle1 = new System.Windows.Forms.TextBox();
+            this.length1 = new System.Windows.Forms.TextBox();
+            this.increment1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,11 +54,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.increment1);
+            this.panel1.Controls.Add(this.length1);
+            this.panel1.Controls.Add(this.angle1);
+            this.panel1.Controls.Add(this.line1);
+            this.panel1.Controls.Add(this.Go);
             this.panel1.Controls.Add(this.increment);
             this.panel1.Controls.Add(this.length);
             this.panel1.Controls.Add(this.angle);
@@ -70,14 +70,15 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // panel2
+            // canvas
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Info;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 100);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1125, 495);
-            this.panel2.TabIndex = 2;
+            this.canvas.BackColor = System.Drawing.SystemColors.Info;
+            this.canvas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.canvas.Location = new System.Drawing.Point(0, 100);
+            this.canvas.Name = "canvas";
+            this.canvas.Size = new System.Drawing.Size(1125, 495);
+            this.canvas.TabIndex = 2;
+            this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
             // 
             // label2
             // 
@@ -116,50 +117,50 @@
             this.increment.Text = "increment";
             this.increment.Click += new System.EventHandler(this.increment_Click);
             // 
-            // button1
+            // Go
             // 
-            this.button1.Location = new System.Drawing.Point(959, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 63);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "GO";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Go.Location = new System.Drawing.Point(959, 14);
+            this.Go.Name = "Go";
+            this.Go.Size = new System.Drawing.Size(104, 63);
+            this.Go.TabIndex = 4;
+            this.Go.Text = "GO";
+            this.Go.UseVisualStyleBackColor = true;
+            this.Go.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // line1
             // 
-            this.textBox1.Location = new System.Drawing.Point(125, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 38);
-            this.textBox1.TabIndex = 5;
+            this.line1.Location = new System.Drawing.Point(124, 24);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(100, 38);
+            this.line1.TabIndex = 5;
             // 
-            // textBox2
+            // angle1
             // 
-            this.textBox2.Location = new System.Drawing.Point(337, 24);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 38);
-            this.textBox2.TabIndex = 6;
+            this.angle1.Location = new System.Drawing.Point(337, 24);
+            this.angle1.Name = "angle1";
+            this.angle1.Size = new System.Drawing.Size(100, 38);
+            this.angle1.TabIndex = 6;
             // 
-            // textBox3
+            // length1
             // 
-            this.textBox3.Location = new System.Drawing.Point(548, 24);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 38);
-            this.textBox3.TabIndex = 7;
+            this.length1.Location = new System.Drawing.Point(548, 24);
+            this.length1.Name = "length1";
+            this.length1.Size = new System.Drawing.Size(100, 38);
+            this.length1.TabIndex = 7;
             // 
-            // textBox4
+            // increment1
             // 
-            this.textBox4.Location = new System.Drawing.Point(805, 27);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 38);
-            this.textBox4.TabIndex = 8;
+            this.increment1.Location = new System.Drawing.Point(805, 27);
+            this.increment1.Name = "increment1";
+            this.increment1.Size = new System.Drawing.Size(100, 38);
+            this.increment1.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1125, 595);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.canvas);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
@@ -176,16 +177,16 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel canvas;
+        private System.Windows.Forms.Button Go;
         private System.Windows.Forms.Label increment;
         private System.Windows.Forms.Label length;
         private System.Windows.Forms.Label angle;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox increment1;
+        private System.Windows.Forms.TextBox length1;
+        private System.Windows.Forms.TextBox angle1;
+        private System.Windows.Forms.TextBox line1;
     }
 }
 
