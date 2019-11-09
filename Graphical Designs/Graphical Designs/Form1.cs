@@ -62,15 +62,31 @@ namespace Graphical_Designs
 
         private void drawLines()
         {
-            new Point(start_x, start_y);
-            new Point(start_x +100, start_y +100);
 
+            my_angle = my_angle + Int32.Parse(angle1.Text);
+            my_length = my_length + Int32.Parse(increment1.Text);
+            my_angle = my_angle + Int32.Parse(angle1.Text);
+
+            end_x = (int)(start_x + Math.Cos(my_angle*0.17453292519) * my_length);
+            end_y = (int)(start_y + Math.Sin(my_angle* 0.17453292519) * my_length);
+
+            Point[] points = {
+            new Point(start_x, start_y),
+            new Point(start_x + 100, start_y + 100)
+        };
+
+            start_x = end_x;
+            start_y = end_y;
+
+            g.DrawLines(myPen, points);
         }
 
 
         private void canvas_Paint(object sender, PaintEventArgs e)
         {
-
+            myPen.Width = 4;
+            g = canvas.CreateGraphics();
+            for (int i = 0; i < Int32.Parse(line1.Text) ; i++)
             drawLines();
 
 

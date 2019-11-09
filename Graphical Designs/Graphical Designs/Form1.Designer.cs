@@ -66,7 +66,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1125, 100);
+            this.panel1.Size = new System.Drawing.Size(1508, 100);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -76,7 +76,7 @@
             this.canvas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.canvas.Location = new System.Drawing.Point(0, 100);
             this.canvas.Name = "canvas";
-            this.canvas.Size = new System.Drawing.Size(1125, 495);
+            this.canvas.Size = new System.Drawing.Size(1508, 927);
             this.canvas.TabIndex = 2;
             this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
             // 
@@ -133,6 +133,7 @@
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(100, 38);
             this.line1.TabIndex = 5;
+            this.line1.Text = "100";
             // 
             // angle1
             // 
@@ -140,6 +141,7 @@
             this.angle1.Name = "angle1";
             this.angle1.Size = new System.Drawing.Size(100, 38);
             this.angle1.TabIndex = 6;
+            this.angle1.Text = "72";
             // 
             // length1
             // 
@@ -147,6 +149,7 @@
             this.length1.Name = "length1";
             this.length1.Size = new System.Drawing.Size(100, 38);
             this.length1.TabIndex = 7;
+            this.length1.Text = "5";
             // 
             // increment1
             // 
@@ -154,16 +157,18 @@
             this.increment1.Name = "increment1";
             this.increment1.Size = new System.Drawing.Size(100, 38);
             this.increment1.TabIndex = 8;
+            this.increment1.Text = "1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1125, 595);
+            this.ClientSize = new System.Drawing.Size(1508, 1027);
             this.Controls.Add(this.canvas);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
