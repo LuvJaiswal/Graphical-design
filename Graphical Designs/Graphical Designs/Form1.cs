@@ -17,7 +17,6 @@ namespace Graphical_Designs
         Graphics g = null;
 
         static int center_x, center_y;
-
         static int start_x, start_y;
         static int end_x, end_y;
         static int my_angle=0;
@@ -50,8 +49,8 @@ namespace Graphical_Designs
             my_angle = Int32.Parse(angle1.Text);
             my_increment = Int32.Parse(increment1.Text);
 
-            start_x = canvas.Width / 2;
-            start_y = canvas.Height / 2;
+            start_x = canvas.Width/2;
+            start_y = canvas.Height/2;
             canvas.Refresh();
         }
 
@@ -65,14 +64,14 @@ namespace Graphical_Designs
 
             my_angle = my_angle + Int32.Parse(angle1.Text);
             my_length = my_length + Int32.Parse(increment1.Text);
-            my_angle = my_angle + Int32.Parse(angle1.Text);
+        
 
-            end_x = (int)(start_x + Math.Cos(my_angle*0.17453292519) * my_length);
-            end_y = (int)(start_y + Math.Sin(my_angle* 0.17453292519) * my_length);
+            end_x = (int)(start_x + Math.Cos(my_angle * .17453292519) * my_length);
+            end_y = (int)(start_y + Math.Sin(my_angle * .17453292519) * my_length);
 
             Point[] points = {
             new Point(start_x, start_y),
-            new Point(start_x + 100, start_y + 100)
+            new Point(end_x, end_y)
         };
 
             start_x = end_x;
@@ -84,7 +83,9 @@ namespace Graphical_Designs
 
         private void canvas_Paint(object sender, PaintEventArgs e)
         {
-            myPen.Width = 4;
+            myPen.Width = 1;
+            my_length = Int32.Parse(length1.Text);
+
             g = canvas.CreateGraphics();
             for (int i = 0; i < Int32.Parse(line1.Text) ; i++)
             drawLines();

@@ -133,7 +133,7 @@
             this.line1.Name = "line1";
             this.line1.Size = new System.Drawing.Size(100, 38);
             this.line1.TabIndex = 5;
-            this.line1.Text = "100";
+            this.line1.Text = "1";
             // 
             // angle1
             // 
@@ -141,7 +141,7 @@
             this.angle1.Name = "angle1";
             this.angle1.Size = new System.Drawing.Size(100, 38);
             this.angle1.TabIndex = 6;
-            this.angle1.Text = "72";
+            this.angle1.Text = "90";
             // 
             // length1
             // 
@@ -149,7 +149,7 @@
             this.length1.Name = "length1";
             this.length1.Size = new System.Drawing.Size(100, 38);
             this.length1.TabIndex = 7;
-            this.length1.Text = "5";
+            this.length1.Text = "100";
             // 
             // increment1
             // 
