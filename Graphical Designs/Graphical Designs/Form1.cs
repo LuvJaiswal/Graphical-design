@@ -30,6 +30,8 @@ namespace Graphical_Designs
         public Form1()
         {
             InitializeComponent();
+            start_x = canvas.Width / 2;
+            start_y = canvas.Height / 2;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,7 +46,13 @@ namespace Graphical_Designs
 
         private void button1_Click(object sender, EventArgs e)
         {
+            my_length = Int32.Parse(length1.Text);
+            my_angle = Int32.Parse(angle1.Text);
+            my_increment = Int32.Parse(increment1.Text);
 
+            start_x = canvas.Width / 2;
+            start_y = canvas.Height / 2;
+            canvas.Refresh();
         }
 
         private void increment_Click(object sender, EventArgs e)
@@ -62,14 +70,8 @@ namespace Graphical_Designs
 
         private void canvas_Paint(object sender, PaintEventArgs e)
         {
-            my_length = Int32.Parse(length1.Text);
-            my_angle = Int32.Parse(angle1.Text);
-            my_increment = Int32.Parse(increment1.Text);
 
-            start_x = canvas.Width / 2;
-            start_y = canvas.Height / 2;
-            canvas.Refresh();
-
+            drawLines();
 
 
         }
